@@ -1,11 +1,32 @@
-'use client'
-import React from "react"
+"use client"
+import React, { useState, useEffect } from "react"
 import Gravity, { MatterBody } from "@/fancy/components/physics/cursor-attractor-and-gravity"
 
 export default function TeamSection() {
+  const [bubbleCount, setBubbleCount] = useState(80) 
+
+  useEffect(() => {
+    const updateBubbleCount = () => {
+      const width = window.innerWidth
+
+      if (width < 640) {
+        setBubbleCount(30)
+      } else if (width < 1024) {
+        setBubbleCount(50) 
+      } else {
+        setBubbleCount(80) 
+      }
+    }
+
+    updateBubbleCount()
+    window.addEventListener("resize", updateBubbleCount) 
+
+    return () => window.removeEventListener("resize", updateBubbleCount) 
+  }, [])
+
   return (
     <section className="w-full h-[80vh] flex flex-col relative justify-center items-center bg-white overflow-hidden mb-10">
-      <h2 className="text-5xl font-bold text-black z-0 mt-10">
+      <h2 className="text-5xl text-center font-bold text-black z-0 mt-10">
         Join the <span className="italic text-[#08ACEF]">Community</span>
       </h2>
 
@@ -15,8 +36,8 @@ export default function TeamSection() {
         cursorFieldRadius={400}
         className="w-full h-full z-0 absolute"
       >
-        {[...Array(80)].map((_, i) => {
-          const size = Math.max(50, Math.random() * 100) // Randomized bubble sizes
+        {[...Array(bubbleCount)].map((_, i) => {
+          const size = Math.max(50, Math.random() * 100) 
           return (
             <MatterBody
               key={i}

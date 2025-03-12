@@ -9,7 +9,7 @@ const Navbar = () => {
   const containerRef = useRef(null)
 
   return (
-    <nav className="flex items-center justify-between h-14" ref={containerRef}>
+    <nav className="flex items-center justify-between h-14 px-4 md:px-0 lg:px-0" ref={containerRef}>
       <div className="text-xl font-semibold">
         <Link href={"/"}>
           <VariableFontCursorProximity
@@ -22,7 +22,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      <div className="text-xl flex gap-4 capitalize">
+      <div className="text-lg md:text-xl lg:text-xl flex gap-4 capitalize">
         <NavbarLinks />
       </div>
     </nav>

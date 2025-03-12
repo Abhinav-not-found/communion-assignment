@@ -5,7 +5,7 @@ import NumberTicker from "@/fancy/components/text/basic-number-ticker"
 const StatItem = ({ value, label }) => {
   return (
     <div className="text-center">
-      <p className="text-5xl font-bold">
+      <p className="text-3xl md:text-5xl lg:text-5xl font-bold">
         <NumberTicker
           from={0}
           target={value}
@@ -51,11 +51,11 @@ const GrowthSection = () => {
   ]
 
   return (
-    <section ref={sectionRef} className="py-20">
-      <h1 className="text-6xl text-center mb-8">
+    <section ref={sectionRef} className="py-20 ">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl text-center mb-8">
         Transforming Potential into Impact
       </h1>
-      <div className="flex justify-center gap-20">
+      <div className="flex justify-center gap-2 md:gap-20 lg:gap-20">
         {isVisible &&
           stats.map((stat, index) => (
             <StatItem key={index} value={stat.value} label={stat.label} />

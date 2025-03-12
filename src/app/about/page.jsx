@@ -16,9 +16,9 @@ const oregano = Oregano({
 
 const Page = () => {
   return (
-    <div className="h-screen bg-white mb-20">
-      <div className="flex">
-        <div className="w-1/2">
+    <div className="h-fit lg:h-screen bg-white mb-20">
+      <div className="flex flex-col lg:flex-row">
+        <div className="lg:w-1/2 px-6 md:px-0">
           <h1 className="text-6xl font-bold mb-2">
             <span className={`${passionOne.className}`}>About </span>
             <span className={`${oregano.className}`}>Us</span>
@@ -39,10 +39,9 @@ const Page = () => {
           </p>
         </div>
 
-        {/* Drag Elements Wrapper */}
-        <div className="w-1/2 h-fit flex items-center justify-center">
+        <div className="lg:w-1/2 pb-40 md:pb-60 lg:pb-0 h-fit flex items-center justify-center">
           <DragElements dragMomentum={false} className="p-10">
-            <div className="p-4 rounded-xl">
+            <div className="lg:p-4 rounded-xl">
               <Image
                 src="https://communionhub.org/static/media/moments-2.1ffdbef7fa235e0af2be.avif"
                 alt="community picture"
@@ -56,8 +55,8 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="flex justify-between mt-20">
-        <div className="flex gap-5">
+      <div className="flex flex-col-reverse lg:flex-row justify-between mt-20">
+        <div className="grid grid-cols-2 grid-rows-2 md:flex md:justify-between mt-4 lg:mt-0 lg:flex-row gap-5">
           <Image
             src={
               "https://communionhub.org/static/media/Container-1.ed46993cc886354b9c97.png"
@@ -65,7 +64,7 @@ const Page = () => {
             height={150}
             width={150}
             alt="team picture"
-            className="rounded-full pt-10 mt-10"
+            className="rounded-full md:pt-10 md:mt-10"
           />
           <Image
             src={
@@ -74,7 +73,7 @@ const Page = () => {
             height={150}
             width={150}
             alt="team picture"
-            className="rounded-full pb-10 mb-10"
+            className="rounded-full md:pb-10 md:mb-10"
           />
           <Image
             src={
@@ -83,7 +82,7 @@ const Page = () => {
             height={150}
             width={150}
             alt="team picture"
-            className="rounded-full pt-10 mt-10"
+            className="rounded-full md:pt-10 md:mt-10"
           />
           <Image
             src={
@@ -92,10 +91,10 @@ const Page = () => {
             height={150}
             width={150}
             alt="team picture"
-            className="rounded-full pb-10 mb-10"
+            className="rounded-full md:pb-10 md:mb-10"
           />
         </div>
-        <div className="w-1/2 ml-20">
+        <div className="lg:w-1/2 lg:ml-20 px-6 md:px-0">
           <h1 className={`text-6xl font-bold ${passionOne.className}`}>
             Our Social Expert Team
           </h1>
